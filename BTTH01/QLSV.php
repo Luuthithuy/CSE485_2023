@@ -1,5 +1,5 @@
 <?php
- //Student 
+ //Lớp Sinh viên (Student) 
  class Student {
     private $id;
     private $name;
@@ -38,7 +38,7 @@
     }
 }
 
- //SdtudenDAO
+ //Lớp Danh sách Sinh viên (SdtudenDAO)
  class StudentDAO {
     private $students;
 
@@ -46,15 +46,12 @@
         $this->students = array();
     }
 
-    // Create
+    // thêm sinh viên
     public function addStudent($student) {
         $this->students[] = $student;
     }
 
-    // read
-
-
-    // Update
+    // cập nhật thông tin sinh viên
     public function updateStudent($student) {
         foreach ($this->students as $key => $s) {
             if ($s->getId() == $student->getId()) {
@@ -64,7 +61,7 @@
         }
     }
 
-    // Delete
+    // xoá sinh viên
     public function deleteStudent($id) {
         foreach ($this->students as $key => $s) {
             if ($s->getId() == $id) {
@@ -75,10 +72,10 @@
         $this->students = array_values($this->students);
     }
 
-    // getAll
-    public function get_all_students() {
+    // lấy danh sách sinh viên
+    public function getAllStudents() {
         return $this->students;
     }
-
 }
+
 ?>
